@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>function f() {
+        var firstText = document.getElementById("text1").value;
+        var secondText = document.getElementById("text2").value;
+        var firstNumber = parseInt(document.getElementById("int1").value);
+        var secondNumber = parseInt(document.getElementById("int2").value);
+        var distance = parseInt(document.getElementById("qty").value);
+
+        var resultElement = document.getElementById("result");
+
+        var resultHTML = ""; // Create an empty string to store the result
+
+        for (var i = firstNumber; i < secondNumber; i += distance) {
+            resultHTML += firstText + " " + i + " " + secondText + "<br>";
+        }
+
+        // Update the HTML content of the "result" element
+        resultElement.innerHTML = resultHTML;
+    }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <p>לייג דא אריין די ערשטע טעקסט</p>
+    <input type="text" id="text1">
+    <p>לייג דא אריין די צווייטע טעקסט</p>
+    <input type="text" id="text2">
+    <p>לייג דא אריין די נומער פון וואו די נומערן זאל זיך אנהייבן</p>
+    <input type="number" id="int1">
+    <p>לייג דא ביז וואו די נומערן זאלן גיין</p>
+    <input type="number" id="int2">
+    <p>יעדע וויפיל נומערן זאל שטיין?</p>
+    <input type="number" id="qty">
+
+    <button id="button" onclick="f()">submit</button>
+
+    <p id="result"></p>
+</body>
+
+</html>
