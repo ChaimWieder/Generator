@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -15,20 +13,15 @@
 
         var resultElement = document.getElementById("result");
 
-        var resultHTML = ""; // Create an empty string to store the result
+        var resultHTML = "";
 
         for (var i = firstNumber; i < secondNumber; i += distance) {
             resultHTML += firstText + " " + i + " " + secondText + "<br>";
         }
-
-        // Update the HTML content of the "result" element
+    
         resultElement.innerHTML = resultHTML;
     }
-
-
-
     </script>
-
 </head>
 
 <body>
@@ -47,5 +40,4 @@
 
     <p id="result"></p>
 </body>
-
 </html>
