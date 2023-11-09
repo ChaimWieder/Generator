@@ -1,43 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>function f() {
-        var firstText = document.getElementById("text1").value;
-        var secondText = document.getElementById("text2").value;
-        var firstNumber = parseInt(document.getElementById("int1").value);
-        var secondNumber = parseInt(document.getElementById("int2").value);
-        var distance = parseInt(document.getElementById("qty").value);
+    <title>Generator</title>
+    <script>
+        function f() {
 
-        var resultElement = document.getElementById("result");
+            var firstText = document.getElementById("text1").value;
+            var secondText = document.getElementById("text2").value;
+            var firstNumber = parseInt(document.getElementById("int1").value);
+            var secondNumber = parseInt(document.getElementById("int2").value);
+            var distance = parseInt(document.getElementById("qty").value);
 
-        var resultHTML = "";
+            console.log("submited \n" + firstText + " " + secondText + " " + firstNumber + " " + secondNumber + " " + distance);
 
-        for (var i = firstNumber; i < secondNumber; i += distance) {
-            resultHTML += firstText + " " + i + " " + secondText + "<br>";
+            var resultElement = document.getElementById("result");
+
+            var resultHTML = "";
+
+            for (var i = firstNumber; i <= secondNumber; i += distance) {
+                resultHTML += firstText + " " + i + " " + secondText + "\n";
+            }
+            resultElement.innerHTML = resultHTML;
+
         }
-    
-        resultElement.innerHTML = resultHTML;
-    }
+        function g() {
+            var copying = document.getElementById("result");
+            copying.select();
+            copying.setSelectionRange(0, 9999999);
+            document.execCommand("copy");
+            console.log(copying);
+            window.alert("copied!");
+
+        }
     </script>
+    <style>
+        .wrap {
+            max-width: 500px;
+            background-color: #f3f3f3;
+            direction: rtl;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 15px;
+            margin: auto;
+            border: 1px solid #555;
+            color: #205397;
+        }
+
+        #button {
+            background-color: #fff;
+            /*color: #0056f6;*/
+            cursor: pointer;
+        }
+
+        #button:hover {
+            background-color: #eee;
+            border: 2px solid #f00;
+            color: #f64655;
+        }
+
+        #hide {
+            visibility: hidden;
+            text-align: center;
+            padding: 15px;
+        }
+
+        input {
+            margin: 5px;
+        }
+
+        #copy {
+            background-color: #eee;
+            border: 2px solid #555;
+            margin: auto;
+            padding: 5px 10px;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        #copy:hover {
+            background-color: #ccc;
+            border: 2px solid rgb(247, 13, 13);
+        }
+
+        #result {
+            min-height: 50px;
+            width: 450px;
+            margin: auto;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+
 </head>
 
 <body>
-    <p>לייג דא אריין די ערשטע טעקסט</p>
-    <input type="text" id="text1">
-    <p>לייג דא אריין די צווייטע טעקסט</p>
-    <input type="text" id="text2">
-    <p>לייג דא אריין די נומער פון וואו די נומערן זאל זיך אנהייבן</p>
-    <input type="number" id="int1">
-    <p>לייג דא ביז וואו די נומערן זאלן גיין</p>
-    <input type="number" id="int2">
-    <p>יעדע וויפיל נומערן זאל שטיין?</p>
-    <input type="number" id="qty">
-
-    <button id="button" onclick="f()">submit</button>
-
-    <p id="result"></p>
+    <div class="wrap">
+        <p>לייג דא אריין די ערשטע טעקסט
+            <input type="text" id="text1">
+        </p>
+        <p>לייג דא אריין די צווייטע טעקסט
+            <input type="text" id="text2">
+        </p>
+        <p>לייג דא אריין די נומער פון וואו די נומערן זאל זיך אנהייבן
+            <input type="number" id="int1">
+        </p>
+        <p>לייג דא ביז וואו די נומערן זאלן גיין
+            <input type="number" id="int2">
+        </p>
+        <p>יעדע וויפיל נומערן זאל שטיין?
+            <input type="number" id="qty">
+        </p>
+        <div class="center">
+            <button id="button" onclick="f()">submit</button>
+        </div>
+        <br>
+        <div id="hide">
+            <textarea id="result" readonly></textarea>
+            <div id="copy" onclick="g()">copy</div>
+        </div>
+    </div>
 </body>
+
 </html>
