@@ -21,7 +21,7 @@
             var resultHTML = "";
 
             for (var i = firstNumber; i <= secondNumber; i += distance) {
-                resultHTML += firstText + " " + i + " " + secondText + "\n";
+                resultHTML += firstText + i + secondText + "\n";
             }
             resultElement.innerHTML = resultHTML;
             document.getElementById("hide").style.visibility = "visible";
@@ -86,7 +86,7 @@
 
         #result {
             min-height: 50px;
-            width: 450px;
+            max-width: 450px;
             margin: auto;
         }
 
@@ -99,10 +99,10 @@
 
 <body>
     <div class="wrap">
-        <p>לייג דא אריין די ערשטע טעקסט
+        <p>לייג דא אריין די ערשטע טעקסט. אויב ווילסטו א ספעיס צווישן די טעקסט און די נאמבער, לייג עס דא נאך די טעקסט.
             <input type="text" id="text1">
         </p>
-        <p>לייג דא אריין די צווייטע טעקסט
+        <p>לייג דא אריין די צווייטע טעקסט. אויב ווילסטו א ספעיס צווישן די נאמבער און די טעקסט, לייג עס דא פאר די טעקסט.
             <input type="text" id="text2">
         </p>
         <p>לייג דא אריין די נומער פון וואו די נומערן זאל זיך אנהייבן
